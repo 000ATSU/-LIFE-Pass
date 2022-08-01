@@ -11,55 +11,63 @@
 
   <body>
     <header>
-      <div>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <h2 class="navbar-brand">
         <%= link_to "LIFE Pass", root_path %>
-      </div>
+      </h2>
       <% if user_signed_in? %>
-      <div>
-        <div>
-          Hello!!<%= current_user.user_name %>
-        </div>
-        <div>
-          <%= render 'layouts/serach' %>
-        </div>
-        <div>
-          <%= link_to "投稿する", new_post_path %>
-        </div>
-        <div>
-          <%= link_to "マイページ", users_path(current_user.id) %>
-        </div>
-        <div>
-          <%= link_to "カテゴリ一覧", categories_path %>
-        </div>
-        <div>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <div>
+            Hello!!<%= current_user.user_name %>
+          </div>
+          <div>
+            <%= render 'layouts/serach' %>
+          </div>
+          <div>
+            <%= link_to "投稿する", new_post_path %>
+          </div>
+          <div>
+            <%= link_to "マイページ", users_path(current_user.id) %>
+          </div>
+          <div>
+            <%= link_to "カテゴリ一覧", categories_path %>
+          </div>
+          <div>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </div>
+        </ul>
       </div>
       <% elsif admin_signed_in? %>
-      <div>
-        <div>
-          <%= link_to "カテゴリ一覧", admin_categories_path %>
-        </div>
-        <div>
-          <%= link_to "会員一覧", admin_users_path %>
-        </div>
-        <div>
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <div>
+            <%= link_to "カテゴリ一覧", admin_categories_path %>
+          </div>
+          <div>
+            <%= link_to "会員一覧", admin_users_path %>
+          </div>
+          <div>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          </div>
+        </ul>
       </div>
       <% else %>
-      <div>
-        <div>
-          <%= link_to "LIFE Passって？", about_path %>
-        </div>
-        <div>
-          <%= link_to "ログイン", new_user_session_path %>
-        </div>
-        <div>
-          <%= link_to "サインアップ", new_user_registration_path %>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <div class="nav-link">
+            <%= link_to "LIFE Passって？", about_path %>
+          </div>
+          <div class="nav-link">
+            <%= link_to "ログイン", new_user_session_path %>
+          </div>
+          <div class="nav-link">
+            <%= link_to "サインアップ", new_user_registration_path %>
+          </div>
+        </ul>
       </div>
       <% end %>
+      </nav>
     </header>
     <%= yield %>
   </body>
