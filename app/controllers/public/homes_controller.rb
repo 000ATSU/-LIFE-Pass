@@ -1,6 +1,6 @@
 class Public::HomesController < ApplicationController
   def top
-    @posts = Post.page(params[:page]).per(6)
+    @posts = Post.page(params[:page]).per(3)
     rank = {}
     User.all.each do |user|
       rank.store(user, Favorite.where(post_id: user.posts.ids).count)

@@ -10,31 +10,37 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <h2 class="navbar-brand">
-        <%= link_to "LIFE Pass", root_path %>
-      </h2>
+    <header class=".container">
+      <nav class="navbar navbar-expand-md navbar-secondary fixed-top bg-dark">
+      <div class="navbar-brand">
+        <%= link_to root_path do %>
+          <h1 class="text-white">LIFE Pass</h1>
+        <% end %>
+      </div>
       <% if user_signed_in? %>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <div>
-            Hello!!<%= current_user.user_name %>
+        <ul class="navbar-nav mr-auto" >
+          <div class="nav-link">
+            <h4 class="text-white">Hello!! <%= current_user.user_name %> さん</h4>
           </div>
-          <div>
-            <%= render 'layouts/serach' %>
+          <div class="nav-link">
+            <%= link_to new_post_path do %>
+              <h4 class="text-white">投稿する</h4>
+            <% end %>
           </div>
-          <div>
-            <%= link_to "投稿する", new_post_path %>
-          </div>
-          <div>
-            <%= link_to "マイページ", users_path(current_user.id) %>
+          <div class="nav-link">
+            <%= link_to users_path(current_user.id) do %>
+              <h4 class="text-white">マイページ</h4>
+            <% end %>
           </div>
           <div>
             <%= link_to "カテゴリ一覧", categories_path %>
           </div>
           <div>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </div>
+          <div>
+            <%= render 'layouts/serach' %>
           </div>
         </ul>
       </div>
@@ -56,13 +62,19 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <div class="nav-link">
-            <%= link_to "LIFE Passって？", about_path %>
+            <%= link_to about_path do %>
+              <h4 class="text-white">LIFE Passって？</h4>
+            <% end %>
           </div>
           <div class="nav-link">
-            <%= link_to "ログイン", new_user_session_path %>
+            <%= link_to new_user_session_path do %>
+              <h4 class="text-white">ログイン</h4>
+            <% end %>
           </div>
           <div class="nav-link">
-            <%= link_to "サインアップ", new_user_registration_path %>
+            <%= link_to new_user_registration_path do %>
+              <h4 class="text-white">サインアップ</h4>
+            <% end %>
           </div>
         </ul>
       </div>
