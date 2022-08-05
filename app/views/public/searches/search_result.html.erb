@@ -1,23 +1,17 @@
-<div>
-  <div>
+<div class=".container">
+  <div class="ml-5 mt-5">
     <h1>検索結果</h1>
   </div>
-  <div>
-    <table>
+  <div class="row mx-auto">
     <% @posts.each do |post| %>
-      <tr>
-        <th><%= post.post_title %></th>
-      </tr>
-      <tr>
-        <td><%= post.post_text.truncate(30) %>...</td>
-      </tr>
-      <tr>
-        <td><%= post.user.user_name %></td>
-        <td>
-          <%= link_to "もっと見る", user_signed_in? ? post_path(post.id) : new_user_registration_path %>
-        </td>
-      </tr>
+    <div class="card col-3 mx-5 mt-3 flex-wrap shadow-lg" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-title text-secondary"><%= post.post_title %></h3>
+        <p class="card-text text-secondary lead"><%= post.post_text.truncate(10) %>...</p>
+         <%= link_to "もっと見る",  post_path(post.id), class:"btn btn-primary" %>
+      </div>
+    </div>
     <% end %>
-    </table>
   </div>
 </div>
+

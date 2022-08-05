@@ -1,32 +1,42 @@
 <div class=".container">
   <div class="jumbotron jumbotron-fluid mx-3 mt-3">
-    <h3 class="pl-3 text-secondary">いいね獲得ランキング</h3>
+    <h3 class="pl-3 text-secondary">
+      いいね獲得ランキング
+    </h3>
     <div class="row pl-3 mx-auto">
     <% @ranks.each.with_index(1) do |rank, i| %>
       <span class="col-2 mr-3">
-        <% if i == 6 %>
-          <% break %>
-        <% else %>
-         <h3 class="text-secondary">第<%= i %>位</h3>
-         <h3 class="text-secondary"><%= rank.user_name %>さん</h3>
-        <% end %>
+      <% if i == 6 %>
+        <% break %>
+      <% else %>
+       <h3 class="text-secondary">
+         第<%= i %>位
+       </h3>
+       <h3 class="text-secondary">
+         <%= rank.user_name %>さん
+       </h3>
+      <% end %>
       </span>
     <% end %>
     </div>
   </div>
   <div class="row mx-auto">
     <% @posts.each do |post| %>
-    <div class="card col-3 mx-5 mt-3 flex-wrap" style="width: 18rem;">
+    <div class="card col-3 mx-5 mt-3 flex-wrap shadow-lg" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title text-secondary"><%= post.post_title %></h5>
-        <p class="card-text text-secondary lead"><%= post.post_text.truncate(10) %>...</p>
-         <%= link_to "もっと見る",  post_path(post.id), class:"btn btn-primary" %>
+        <h3 class="card-title text-secondary">
+          <%= post.post_title %>
+        </h3>
+        <p class="card-text text-secondary lead">
+          <%= post.post_text.truncate(15) %>
+        </p>
+        <%= link_to "もっと見る",  post_path(post.id), class:"btn btn-primary" %>
       </div>
     </div>
     <% end %>
   </div>
   <div class="row fixed-bottom">
-    <div class="mx-auto mb-3">
+    <div class="mx-auto mb-3 pagination pagination-lg">
       <%= paginate @posts %>
     </div>
   </div>

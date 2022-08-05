@@ -1,21 +1,17 @@
-<div>
-  <div>
-    <h1><%= @user.user_name %>さんのブックマーク</h1>
+<div class=".container">
+  <div class="row mt-5 ml-5">
+    <h1><%= @user.user_name %> さんのブックマーク一覧</h1>
   </div>
-  <div>
-    <table>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <th><%= bookmark.post.post_title %></th>
-      </tr>
-      <tr>
-        <td><%= bookmark.post.post_text.truncate(30)... %></td>
-      </tr>
-      <tr>
-        <td><%= bookmark.post.user.user_name %></td>
-        <td><%= link_to "もっと見る", post_path(bookmark.post)%></td>
-      </tr>
-    <% end %>
-    </table>
+  <div class="row mt-5 justify-content-center">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="card col-3 mx-5 mt-3 flex-wrap shadow-lg" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-title text-secondary"><%= bookmark.post.post_title %></h3>
+        <p class="card-text text-secondary lead"><%= bookmark.post.post_text.truncate(10) %>...</p>
+         <%= link_to "もっと見る",  post_path(bookmark.post), class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
+

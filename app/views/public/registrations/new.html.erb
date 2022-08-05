@@ -7,21 +7,21 @@
       <%= f.text_field :user_name, required: true, placeholder: "ユーザーネーム" %>
     </div>
 
-    <div class="form-label-group mt-3">
+    <div class="form-label-group mt-5">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
     </div>
 
-    <div class="form-label-group mt-3">
+    <div class="form-label-group mt-5">
       <%= f.password_field :password, autocomplete: "new-password",  placeholder: "パスワード(6文字以上)" %>
     </div>
 
-    <div>
-      <%= f.submit "サインアップ"%>
+    <div class="my-3">
+      <%= f.submit "サインアップ", class: "btn btn-success btn-lg" %>
     </div>
-  <% end %>
     <div>
       <%= link_to "サインアップ済みの方はこちら", new_user_session_path %>
     </div>
+  <% end %>
   </div>
 </div>
 

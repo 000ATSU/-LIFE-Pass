@@ -1,2 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+header {
+  padding-top: 70px;
+}
+
+input[type="text"]:not(.not_css) {
+  width: 350px;
+  height: 50px;
+}
+
+input[type="email"] {
+  width: 350px;
+  height: 50px;
+}
+
+input[type="password"] {
+  width: 350px;
+  height: 50px;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}

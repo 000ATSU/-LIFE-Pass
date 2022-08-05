@@ -23,23 +23,27 @@
           <div class="nav-link">
             <h4 class="text-white">Hello!! <%= current_user.user_name %> さん</h4>
           </div>
-          <div class="nav-link">
+          <div class="nav-link ml-3">
             <%= link_to new_post_path do %>
               <h4 class="text-white">投稿する</h4>
             <% end %>
           </div>
-          <div class="nav-link">
+          <div class="nav-link ml-3">
             <%= link_to users_path(current_user.id) do %>
               <h4 class="text-white">マイページ</h4>
             <% end %>
           </div>
-          <div>
-            <%= link_to "カテゴリ一覧", categories_path %>
+          <div class="nav-link ml-3">
+            <%= link_to categories_path do %>
+              <h4 class="text-white">カテゴリ一覧</h4>
+            <% end %>
           </div>
-          <div>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <div class="nav-link ml-3">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <h4 class="text-white">ログアウト</h4>
+            <% end %>
           </div>
-          <div>
+          <div class="nav-link ml-5">
             <%= render 'layouts/serach' %>
           </div>
         </ul>

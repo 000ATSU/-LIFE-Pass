@@ -1,17 +1,26 @@
-<div>
-  <h2>カテゴリ一覧</h2>
-  <h4>カテゴリ名をクリックするとそのカテゴリの一覧を見ることが出来ます！！</h4>
-  <table>
-    <tr>
+<div class=".container">
+  <div class="jumbotron jumbotron-fluid shadow-lg mx-5 mt-5">
+    <div class="ml-3">
+      <h2>カテゴリ一覧</h2>
+    </div>
+    <div class="ml-3">
+      <p class="lead">
+        カテゴリ名をクリックするとそのカテゴリの一覧を見ることが出来ます
+      </p>
+    </div>
+    <div class="row">
     <% @categories.each do |category| %>
-      <th>
-        <%= link_to category_path(category) do %>
-          <%= category.category_name %>
-        <% end %>
-      </th>
-      <th></th>
-      <th></th>
+      <div class="card col-1 mx-5 mt-3 flex-wrap shadow-lg bg-info" style="width: 18rem;">
+        <div class="card-body">
+          <%= link_to category_path(category) do %>
+            <h3 class="card-title text-white">
+              <%= category.category_name %>
+            </h3>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-    </tr>
-  </table>
+    </div>
+  </div>
 </div>
+
