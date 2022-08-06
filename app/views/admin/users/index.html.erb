@@ -1,27 +1,47 @@
-<div>
-  <table>
+<div class=".container">
   <% @users.each do |user| %>
-    <tr>
-      <th>ユーザーネーム</th>
-      <td>
-      <%= link_to admin_user_path(user.id) do %>
-        <%= user.user_name %>
-      <% end %>
-      </td>
-      <td></td>
-      <th>最終ログイン</th>
-      <td><%= l user.last_sign_in_at, format: :short %></td>
-      <td></td>
-      <th>投稿数</th>
-      <td><%= user.posts.count %></td>
-      <td></td>
-      <th>アカウント作成日時</th>
-      <td><%= l user.created_at, format: :short %></td>
-    </tr>
+  <div class="row justify-content-center mt-3 mx-3 alert alert-secondary">
+    <div class="mr-3">
+      <h4>ユーザーネーム</h4>
+    </div>
+    <div class="mr-3">
+      <h4>
+        <%= link_to admin_user_path(user.id) do %>
+          <%= user.user_name %>
+        <% end %>
+      </h4>
+    </div>
+    <div class="mr-3">
+      <h4>最終ログイン</h4>
+    </div>
+    <div class="mr-3">
+      <h4>
+        <%= l user.last_sign_in_at, format: :short %>
+      </h4>
+    </div>
+    <div class="mr-3">
+      <h4>投稿数</h4>
+    </div>
+    <div class="mr-3">
+      <h4>
+        <%= user.posts.count %>
+      </h4>
+    </div>
+    <div class="mr-3">
+      <h4>アカウント作成日時</h4>
+    </div>
+    <div class="mr-3">
+      <h4>
+        <%= l user.created_at, format: :short %>
+      </h4>
+    </div>
+  </div>
   <% end %>
-  </table>
-  <div>
-    <%= paginate @users %>
+  <div class="row fixed-bottom">
+    <div class="mx-auto mb-3 pagination pagination-lg">
+      <%= paginate @users %>
+    </div>
   </div>
 </div>
+
 

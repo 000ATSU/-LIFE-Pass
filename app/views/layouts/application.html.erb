@@ -4,8 +4,9 @@
     <title>LIFEPass</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/59339ca57a.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -14,33 +15,45 @@
       <nav class="navbar navbar-expand-md navbar-secondary fixed-top bg-dark">
       <div class="navbar-brand">
         <%= link_to root_path do %>
-          <h1 class="text-white">LIFE Pass</h1>
+          <h1 class="text-white">
+            LIFE Pass
+          </h1>
         <% end %>
       </div>
       <% if user_signed_in? %>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto" >
-          <div class="nav-link">
-            <h4 class="text-white">Hello!! <%= current_user.user_name %> さん</h4>
+          <div class="nav-link ml-3">
+            <h2 class="text-white">
+              Hello!! <%= current_user.user_name %> さん
+            </h2>
           </div>
           <div class="nav-link ml-3">
             <%= link_to new_post_path do %>
-              <h4 class="text-white">投稿する</h4>
+              <h4 class="text-white">
+                投稿する
+              </h4>
             <% end %>
           </div>
           <div class="nav-link ml-3">
             <%= link_to users_path(current_user.id) do %>
-              <h4 class="text-white">マイページ</h4>
+              <h4 class="text-white">
+                マイページ
+              </h4>
             <% end %>
           </div>
           <div class="nav-link ml-3">
             <%= link_to categories_path do %>
-              <h4 class="text-white">カテゴリ一覧</h4>
+              <h4 class="text-white">
+                カテゴリ一覧
+              </h4>
             <% end %>
           </div>
           <div class="nav-link ml-3">
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <h4 class="text-white">ログアウト</h4>
+              <h4 class="text-white">
+                ログアウト
+              </h4>
             <% end %>
           </div>
           <div class="nav-link ml-5">
@@ -51,14 +64,26 @@
       <% elsif admin_signed_in? %>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <div>
-            <%= link_to "カテゴリ一覧", admin_categories_path %>
+          <div class="nav-link ml-3">
+            <%= link_to admin_categories_path do %>
+              <h4 class="text-white">
+                カテゴリ一覧
+              </h4>
+            <% end %>
           </div>
-          <div>
-            <%= link_to "会員一覧", admin_users_path %>
+          <div class="nav-link ml-3">
+            <%= link_to admin_users_path do %>
+              <h4 class="text-white">
+                会員一覧
+              </h4>
+            <% end %>
           </div>
-          <div>
-            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          <div class="nav-link ml-3">
+            <%= link_to destroy_admin_session_path, method: :delete do %>
+              <h4 class="text-white">
+                ログアウト
+              </h4>
+            <% end %>
           </div>
         </ul>
       </div>
@@ -67,17 +92,23 @@
         <ul class="navbar-nav mr-auto">
           <div class="nav-link">
             <%= link_to about_path do %>
-              <h4 class="text-white">LIFE Passって？</h4>
+              <h4 class="text-white">
+                LIFE Passって？
+              </h4>
             <% end %>
           </div>
           <div class="nav-link">
             <%= link_to new_user_session_path do %>
-              <h4 class="text-white">ログイン</h4>
+              <h4 class="text-white">
+                ログイン
+              </h4>
             <% end %>
           </div>
           <div class="nav-link">
             <%= link_to new_user_registration_path do %>
-              <h4 class="text-white">サインアップ</h4>
+              <h4 class="text-white">
+                サインアップ
+              </h4>
             <% end %>
           </div>
         </ul>

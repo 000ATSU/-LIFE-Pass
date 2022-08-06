@@ -20,13 +20,17 @@
     <% if @post.favorited_by?(current_user) %>
       <h4>
         <%= link_to post_favorites_path(@post), method: :delete do %>
-          💕
+          <p>
+            <i class="fa-regular fa-face-grin-squint fa-2x"></i>
+          </p>
         <% end %>
       </h4>
       <% else %>
       <h4>
         <%= link_to post_favorites_path(@post), method: :post do %>
-          🖤
+          <p>
+            <i class="fa-regular fa-face-smile fa-2x"></i>
+          </p>
         <% end %>
       </h4>
     <% end %>
@@ -35,13 +39,17 @@
       <% if @post.bookmarked_by?(current_user) %>
       <h4>
         <%= link_to post_bookmarks_path(@post), method: :delete do %>
-          🔖
+          <p>
+            <i class="fa-solid fa-book-bookmark fa-2x"></i>
+          </p>
         <% end %>
       </h4>
       <% else %>
       <h4>
         <%= link_to post_bookmarks_path(@post), method: :post do %>
-          📖
+          <p>
+            <i class="fa-solid fa-book-open fa-2x"></i>
+          </p>
         <% end %>
       </h4>
       <% end %>

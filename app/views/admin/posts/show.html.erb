@@ -1,10 +1,28 @@
-<div>
-  <div>
-    <h1><%= @post.post_title %></h1>
-    <h4><%= @post.post_text %></h4>
-    <h4><%= @post.user.user_name %></h4>
+<div class=".container">
+  <div class="jumbotron jumbotron-fluid shadow-lg mx-auto mt-5 w-50">
+    <div class="mx-3 mb-5">
+      <h1 class="display-4">
+        <%= @post.post_title %>
+      </h1>
+    </div>
+    <div class="mx-3 my-5 text-break">
+      <h1>
+        <%= @post.post_text%>
+      </h1>
+    </div>
+    <div class="float-right mr-5 my-3">
+      <h2>
+        投稿者 <%= @post.user.user_name %>
+      </h2>
+    </div>
   </div>
-  <div>
-    <%= link_to "投稿を削除する", admin_post_path, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  <div class="row justify-content-center">
+    <div class="mx-auto">
+      <%= link_to "ユーザー詳細ページへ戻る", admin_user_path(@post.user_id), class: "btn btn-success btn-lg" %>
+    </div>
+    <div class="mx-auto">
+      <%= link_to "投稿を削除する", admin_post_path, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-lg " %>
+    </div>
   </div>
 </div>
+

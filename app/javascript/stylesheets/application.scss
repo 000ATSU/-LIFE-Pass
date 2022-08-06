@@ -1,13 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 header {
   padding-top: 70px;
 }
 
-input[type="text"]:not(.not_css) {
+input[type="text"]:not(.search) {
   width: 350px;
   height: 50px;
+}
+
+.search {
+  width: 200px;
+  height: 30px;
 }
 
 input[type="email"] {
@@ -22,4 +28,9 @@ input[type="password"] {
 
 body {
   font-family: 'Ubuntu', sans-serif;
+}
+
+.select_size {
+  width: 200px;
+  height: 30px;
 }

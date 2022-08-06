@@ -1,23 +1,30 @@
-<div>
-  <%= form_with model: @category, url: admin_categories_path, method: :post do |f| %>
-  <table>
-    <tr>
-      <th>カテゴリ名</th>
-      <td><%= f.text_field :category_name, required: true %></td>
-      <td><%= f.submit '追加' %></td>
-    </tr>
-  </table>
-  <% end %>
-</div>
-<div>
-  <h3>カテゴリ名一覧</h3>
-  <table>
-    <tr>
-    <% @categories.each do |category| %>
-      <td><%= category.category_name %></td>
+<div class=".container">
+  <div class="row my-5 justify-content-center">
+    <%= form_with model: @category, url: admin_categories_path, method: :post do |f| %>
+    <div class="d-inline-flex">
+      <%= f.text_field :category_name, required: true, placeholder: "カテゴリ追加フォーム" %>
+    </div>
+    <div class="d-inline-flex">
+      <%= f.submit '追加', class: "btn btn-success btn-lg" %>
+    </div>
     <% end %>
-    </tr>
-  </table>
+  </div>
+  <div class="row my-5">
+    <div class="mx-auto">
+      <h1>カテゴリ一覧</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <% @categories.each do |category| %>
+      <div class="card col-1 mx-5 mt-3 flex-wrap bg-info" style="width: 18rem;">
+        <div class="card-body">
+          <h3 class="card-title text-black">
+            <%= category.category_name %>
+          </h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

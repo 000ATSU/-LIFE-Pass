@@ -1,28 +1,34 @@
-<div>
-  <div>
-    <h1><%= @user.user_name %></h1>
-    <h3><%= @user.posts.count %>📬</h3>
-    <h3><%= @user.favorites.count %>💕</h3>
+<div class=".container">
+  <div class="row mt-5 ml-5">
+    <div class="mr-5">
+      <h1><%= @user.user_name %>さん の詳細ページ</h1>
+    </div>
+    <div class="mr-5 d-flex align-items-end">
+      <h3>
+        投稿数 <%= @user.posts.count %>
+      </h3>
+    </div>
+    <div class="mr-5 d-flex align-items-end">
+      <h3>
+        いいね <%= @get_favorite.count %>
+      </h3>
+    </div>
   </div>
-  <div>
-    <table>
-    <% @posts.each do |post| %>
-      <tr>
-        <th><%= post.post_title %></th>
-      </tr>
-      <tr>
-        <td><%= post.post_text.truncate(30) %>...</td>
-      </tr>
-      <tr>
-        <td><%= post.user.user_name %></td>
-        <td>
-          <%= link_to "もっと見る", admin_post_path(post.id) %>
-        </td>
-      </tr>
-    <% end %>
-    </table>
+  <div class="row mt-5 justify-content-center">
+  <% @posts.each do |post| %>
+    <div class="card col-3 mx-5 mt-3 flex-wrap shadow-lg" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-title text-secondary"><%= post.post_title %></h3>
+        <p class="card-text text-secondary lead"><%= post.post_text.truncate(10) %>...</p>
+         <%= link_to "もっと見る",  admin_post_path(post.id), class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
   </div>
-  <div>
-    <%= paginate @posts %>
+  <div class="row fixed-bottom">
+    <div class="mx-auto mb-3 pagination pagination-lg">
+      <%= paginate @posts %>
+    </div>
   </div>
 </div>
+
