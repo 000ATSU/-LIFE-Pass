@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # TODO : デプロイ時にはバージョンを環境と合わせてください
 # TODO : .ruby-versionの変更も必要です。
-ruby '2.7.0'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '= 6.1.4'
@@ -71,3 +71,5 @@ end
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
+
+ 
