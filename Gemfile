@@ -33,6 +33,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -45,9 +49,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'pry-byebug'
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :test do
@@ -63,7 +64,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'kaminari'
-gem 'pry-rails'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
@@ -72,4 +72,3 @@ gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
 
- 
