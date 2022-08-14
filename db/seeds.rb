@@ -12,7 +12,7 @@ Admin.create!(
   ]
   )
 
-User.creste!(
+User.create!(
   [
   {email: 'user1@user.com', password: 'user1@user.com'},
   {email: 'user2@user.com', password: 'user2@user.com'},
