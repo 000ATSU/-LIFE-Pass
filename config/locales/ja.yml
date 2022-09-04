@@ -8,3 +8,19 @@ ja:
   errors:
     messages:
       record_invalid: "バリデーションに失敗しました: %{errors}"
+    models:
+      user:
+        attributes:
+          password:
+            blank: 入力してください。
+          email:
+            blank: 入力してください。
+    attributes:
+      user:
+        email: メールアドレス
+        user_name: ユーザーネーム
+        password: パスワード
+  errors:
+    messages:
+      not_saved: 登録できません。
+      
