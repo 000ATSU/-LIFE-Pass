@@ -22,7 +22,9 @@ LIFE Pass
 人生で課題、問題、悩みなどを抱えた時、それらの人の力になりたい時
 
 ## 設計書
-<...>
+https://docs.google.com/spreadsheets/d/1ccQ9wK0MExJ0gye1xjQknI0YJ9M0OmELAxLaSfVORJI/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1WJ48CSTZ8BX_lkVVvefpiLpPdZQqZCmVX2nKyukAJI8/edit?usp=sharing
+
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -31,9 +33,3 @@ LIFE Pass
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-## 使用素材
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
--
-
-https://docs.google.com/spreadsheets/d/16Ucu3LTwrZEyfoFIFYw1aKLQUatVI369HTNwPrrgqS0/edit?usp=sharing
